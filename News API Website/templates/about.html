@@ -1,0 +1,161 @@
+<html>
+  <head>
+    <title>{% block title %} About Us {%endblock%}</title>
+    {% extends 'base.html' %} {% block content %}
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+      }
+      .title {
+        height: 21vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .lines {
+        color: black;
+      }
+      .headr {
+        font-size: 4.2em;
+        font-family: -apple-system;
+        text-align: center;
+        margin: 0 7.5%;
+      }
+      @media (min-width: 0px) and (max-width: 800px) {
+        .headr {
+          font-size: 2.4em;
+        }
+      }
+      .double-container {
+        height: 55vh;
+        display: grid;
+        grid-template-columns: 50% 50%;
+      }
+      @media (min-width: 0px) and (max-width: 621px) {
+        .double-container {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+      .paragraphs {
+        border: solid black 2px;
+        width: 100%;
+      }
+      .inner-para {
+        font-family: monospace;
+        margin: 3% 5%;
+        font-size: 1em;
+      }
+      @media (min-width: 400px) and (max-width: 1100px) {
+        .inner-para {
+          font-size: 0.7em;
+        }
+      }
+      @media (min-width: 0px) and (max-width: 400px) {
+        .inner-para {
+          font-size: 0.5em;
+        }
+      }
+      .svg-attempt {
+        width: 100%;
+
+        border: solid black 2px;
+      }
+      .bottom-title {
+        padding-top: 33%;
+
+        margin: 0 7.5%;
+        height: 21vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      @media (min-width: 0px) and (max-width: 622px) {
+        .bottom-title {
+          padding-top: 85%;
+        }
+      }
+      @media (min-width: 670px) and (max-width: 760px) {
+        .bottom-title {
+          padding-top: 25%;
+        }
+      }
+      @media (min-width: 760px) and (max-width: 1100px) {
+        .bottom-title {
+          padding-top: 5%;
+        }
+      }
+      @media (min-width: 1200px) {
+        .bottom-title {
+          padding-top: 15%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <hr class="lines" />
+    <div class="title">
+      <h1 class="headr">Almost Every Story Needs an <b>Outlet</b>.</h1>
+    </div>
+    <hr class="lines" />
+    <div class="double-container">
+      <div class="paragraphs">
+        <br />
+        <p class="inner-para">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum
+          repudiandae, laborum autem error inventore ullam voluptates expedita
+          suscipit! Mollitia error quod modi sint quaerat eaque labore incidunt
+          odit rerum maiores ipsa aperiam, at laboriosam adipisci recusandae
+          tempore. Nostrum veniam consequatur minima culpa reprehenderit sint
+          amet. Enim exercitationem et quibusdam laborum libero itaque
+          perspiciatis quo eligendi totam sapiente omnis eaque deleniti fugit
+          maxime, nobis expedita doloribus quaerat qui iure aperiam! Tempore
+          tenetur dolor perspiciatis.
+        </p>
+        <br />
+        <p class="inner-para">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente
+          distinctio tempora dolor veritatis fugit cumque deserunt est
+          voluptatem qui delectus hic recusandae esse doloribus ad illum labore
+          unde eligendi consequuntur quaerat, sed doloremque eveniet minima
+          beatae impedit! Officia ipsam aperiam hic placeat provident commodi
+          dolores voluptates in ad et laboriosam labore maxime dolor praesentium
+          repudiandae, itaque distinctio. Nesciunt, fugit!
+        </p>
+        <br />
+      </div>
+      <div class="svg-attempt">
+        <div
+          style="
+            width: 100%;
+            height: 0;
+            padding-bottom: 73%;
+            position: relative;
+          "
+        >
+          <iframe
+            src="https://giphy.com/embed/3b5uEK1rJJ0IEjpoXT"
+            width="100%"
+            height="105%"
+            style="position: absolute"
+            frameborder="0"
+            class="giphy-embed"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom-title">
+      <h1 class="headr">A Living Network of News Articles.</h1>
+    </div>
+    <br />
+    <br />
+  </body>
+  {%endblock%}
+</html>

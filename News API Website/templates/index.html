@@ -1,0 +1,134 @@
+<html>
+  <head>
+    <title>{% block title %} Home {%endblock%}</title>
+    {% extends 'base.html' %} {% block content %}
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100%;
+      }
+      .articles {
+        width: 75vw;
+        margin: auto;
+      }
+      .card-title {
+        text-decoration: none;
+      }
+      .card-text {
+        text-decoration: none;
+      }
+      .title {
+        text-align: center;
+        font-family: -apple-system;
+        font-size: 2em;
+        padding: 0 10%;
+      }
+      @media (min-width: 0px) and (max-width: 450px) {
+        .articles {
+          width: 90vw;
+          margin: auto;
+        }
+      }
+      #story-img {
+        border: solid grey 2px;
+        height: 100%;
+      }
+      .hide {
+        display: none;
+      }
+      .footer {
+        text-align: center;
+        margin-top: auto;
+      }
+      /* prob go for a translate instead */
+      #prev-btn:hover {
+        transform: scale(1.2);
+        background-color: cadetblue;
+      }
+      #next-btn:hover {
+        background-color: cadetblue;
+        transform: scale(1.2);
+      }
+      #next-btn:active {
+        background-color: rgb(58, 94, 95);
+      }
+      #prev-btn:active {
+        background-color: rgb(58, 94, 95);
+      }
+    </style>
+  </head>
+  <body>
+    <br />
+    <div class="container-fluid bar">
+      <form class="d-flex" onsubmit="return getResults(1)" autocomplete="off">
+        <input
+          class="form-control me-2"
+          type="search"
+          name="search"
+          id="search"
+          placeholder="Search for Articles"
+          aria-label="Search"
+        />
+        <button class="btn btn-success" type="submit">Search</button>
+      </form>
+    </div>
+    <br />
+    <br />
+    <br />
+    <h1 class="title">Welcome to Today's Top Stories.</h1>
+    <br />
+    <br />
+    <div class="parent">
+      {% for data in info['articles'] %}
+      <div class="card mb-3 articles" id="articles">
+        <a
+          id="url"
+          href="{{data['url']}}"
+          style="text-decoration: none; color: black"
+        >
+          <div class="row g-0 article-links">
+            <div class="col-md-4">
+              <img
+                src="{{data['urlToImage']}}"
+                class="img-fluid rounded-start"
+                id="story-img"
+                alt="image unavailable"
+              />
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title" id="title">{{data['title']}}</h5>
+                <p class="card-text" id="description">
+                  {{data['description']}}
+                </p>
+                <p class="card-text" id="date">{{data['publishedAt'][:10]}}</p>
+                <p class="card-text">
+                  <small class="text-muted" id="author"
+                    >by {{data['author']}}</small
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      {% endfor %}
+    </div>
+    <br />
+    <div class="footer hide">
+      <span
+        ><button id="prev-btn" class="btn btn-secondary" onclick="prev()">
+          PREVIOUS PAGE
+        </button>
+        <button id="next-btn" class="btn btn-secondary" onclick="next()">
+          NEXT PAGE
+        </button></span
+      >
+    </div>
+    <br />
+    <br />
+  </body>
+  {%endblock%}
+</html>
