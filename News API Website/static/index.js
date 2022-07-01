@@ -1,6 +1,5 @@
 let index = 1;
 
-// could do a parameter called page for the page # which is default set to 1 in HTML
 
 function getResults(page) {
     
@@ -33,15 +32,7 @@ function getResults(page) {
     `apiKey=${parameters.apiKey}`
 
 
-
-    console.log(url)
-
-// request from the actual news api instead and update the page
-
     fetch(url, {method:'GET'}).then(res => res.json()).then(data => {
-      
-      
-        // console.log(data.articles, data.totalResults);
 
         
           for (i=0;i<parent.length;i++){
@@ -50,7 +41,7 @@ function getResults(page) {
               parent[i].classList.add('hide')
             }
          }
-        //  console.log(parent.length, parent)
+
 
          prevBtn = document.getElementById('prev-btn');
           if (index <= 1) {
@@ -58,6 +49,7 @@ function getResults(page) {
         } else {
           prevBtn.classList.remove('hide')
         }
+        
         
        title.innerHTML = `Welcome to Top Stories involving "${search}".`
 
@@ -118,7 +110,7 @@ function prev(){
     prevBtn.classList.remove('hide')
     getResults(index-1)
     index -= 1
-    // console.log(index)
+
   }
 
 }
@@ -135,7 +127,6 @@ function next(){
   }
   getResults(index+1)
   index += 1
-  // console.log(index)
 
 };
 
