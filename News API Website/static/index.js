@@ -23,7 +23,6 @@ function getResults(page) {
         'pageSize': 50}
 
       
-    // console.log('page = ', parameters.page, page, 'Index = ', index)
 
     let url = `https://newsapi.org/v2/everything?` +
    `q=${parameters.q}&` +
